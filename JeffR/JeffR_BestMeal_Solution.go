@@ -365,7 +365,7 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 		}
 		return nil,
 			fmt.Errorf(""+
-				"Checked %d meals, none fit your budget- "+
+				"Checked %d meal(s), none fit your budget- "+
 				"you need another %d buck(s) to dine here :/",
 				mealCounter, minimumCost-budget)
 	}
