@@ -8,6 +8,7 @@ powershell: `$env:GOTMPDIR="$env:USERPROFILE\Projects\tmp"`
     * [Powershell](#powershell)
 2. [Implementation Notes](#implementation-notes)
     * [Missing Categories](#missing-categories)
+3. [Randomized Max Test Case](#randomized-max-test-case)
 
 # Command-line
 *As spec'd, with no command-line parameters, the solution expects menu.json to exist in the current directory, and only outputs bestMeal json or error json to the console.*
@@ -69,3 +70,19 @@ d. Dessert
 
 [TOC](#table-of-contents)
 
+# Randomized Max Test Case
+code was written to generate a test case with max items per category with randomized-yet-unique values 1-50 for cost and satisfaction within each category and randomized order of items; 
+
+the single item with max satisfaction in each category has the same name as the (presumably) best meal 
+answer for the full menu example, all other names are obviously fake but unique;
+
+the budget of $200 for this menu means we'll always find the max satisfaction of 200.
+
+each time you run the generator code, the output will be different, but the best meal will always 
+consist of the same items, satisfaction=200, and randomized cost.
+
+the separate `*Generator*.go` routine was renamed to `*_go` to avoid collisions / complaints in the VSCode editor, tho after renaming it back to `*.go`, it and the solution technically have no problems co-existing.
+
+see menuRandMax.json
+
+[TOC](#table-of-contents)
