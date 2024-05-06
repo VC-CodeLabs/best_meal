@@ -1,0 +1,53 @@
+{
+    "foods": [
+        {
+            "name": "Fried Calamari",
+            "cost": 6,
+            "satisfaction": 5,
+            "category": "Appetizer"
+        },
+        {
+            "name": "Bruschetta",
+            "cost": 4,
+            "satisfaction": 4,
+            "category": "Appetizer"
+        },
+        {
+            "name": "Soda",
+            "cost": 1,
+            "satisfaction": 1,
+            "category": "Drink"
+        },
+        {
+            "name": "Beer",
+            "cost": 3,
+            "satisfaction": 2,
+            "category": "Drink"
+        },
+        {
+            "name": "Lasagna",
+            "cost": 8,
+            "satisfaction": 7,
+            "category": "Main Course"
+        },
+        {
+            "name": "Burger",
+            "cost": 6,
+            "satisfaction": 5,
+            "category": "Main Course"
+        },
+        {
+            "name": "Cheesecake",
+            "cost": 4,
+            "satisfaction": 4,
+            "category": "Dessert"
+        },
+        {
+            "name": "Ice Cream",
+            "cost": 2,
+            "satisfaction": 2,
+            "category": "Dessert"
+        }
+    ],
+    "budget": 25
+}

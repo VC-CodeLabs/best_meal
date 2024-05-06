@@ -1,0 +1,7 @@
+{
+    "foods": [
+      {"name": "Brie", "cost": 10, "satisfaction": 8, "category": "Cheese"}
+    ],
+    "budget": 20
+  }
+  
