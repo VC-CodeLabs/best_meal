@@ -9,7 +9,7 @@ powershell: `$env:GOTMPDIR="$env:USERPROFILE\Projects\tmp"`
 2. [Implementation Notes](#implementation-notes)
     * [Missing Categories](#missing-categories)
 3. [Randomized Max Test Case](#randomized-max-test-case)
-
+    * [Test Cases Summary](#test-cases-summary)
 # Command-line
 *As spec'd, with no command-line parameters, the solution expects menu.json to exist in the current directory, and only outputs bestMeal json or error json to the console.*
 
@@ -45,7 +45,7 @@ I had originally intended to march thru the inputs to assemble all possible meal
 
 checking for equal-satisfaction-but-lower-cost meals is included in the algorithm- IMO, spending less money is more satisfying
 
-categories are stripped of whitespace and converted to lower case and stripped of pluralization, so 
+categories are stripped of whitespace and converted to lower case and stripped of pluralization, so e.g.
 
 - `"Main Courses"`
 - `"mAiNcOuRsE"`
@@ -84,5 +84,10 @@ consist of the same items, satisfaction=200, and randomized cost.
 the separate `*Generator*.go` routine was renamed to `*_go` to avoid collisions / complaints in the VSCode editor, tho after renaming it back to `*.go`, it and the solution technically have no problems co-existing.
 
 see menuRandMax.json
+
+[TOC](#table-of-contents)
+
+## Test Cases Summary
+for additional info on all menu*.json test cases, see [menu_README.md](menu_README.md)
 
 [TOC](#table-of-contents)
