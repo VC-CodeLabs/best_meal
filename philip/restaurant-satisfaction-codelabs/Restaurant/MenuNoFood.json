@@ -1,0 +1,6 @@
+{
+"foods": [
+{"name": "water", "cost": 0, "satisfaction": 10, "category": "drink"}
+],
+"budget": 25
+}

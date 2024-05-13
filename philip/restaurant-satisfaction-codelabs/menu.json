@@ -1,0 +1,25 @@
+{
+"foods": [
+  {"name": "Fried Calamari", "cost": 6, "satisfaction": 5, "category": "Appetizer"},
+  {"name": "Spinach Dip", "cost": 5, "satisfaction": 3, "category": "Appetizer"},
+  {"name": "Bruschetta", "cost": 4, "satisfaction": 4, "category": "Appetizer"},
+  {"name": "Chicken Wings", "cost": 7, "satisfaction": 6, "category": "Appetizer"},
+  {"name": "Garlic Bread", "cost": 3, "satisfaction": 2, "category": "Appetizer"},
+  {"name": "Soda", "cost": 1, "satisfaction": 1, "category": "Drink"},
+  {"name": "Coffee", "cost": 2, "satisfaction": 2, "category": "Drink"},
+  {"name": "Beer", "cost": 3, "satisfaction": 2, "category": "Drink"},
+  {"name": "Wine", "cost": 5, "satisfaction": 4, "category": "Drink"},
+  {"name": "Cocktail", "cost": 6, "satisfaction": 5, "category": "Drink"},
+  {"name": "Steak", "cost": 12, "satisfaction": 10, "category": "Main Course"},
+  {"name": "Salmon", "cost": 11, "satisfaction": 9, "category": "Main Course"},
+  {"name": "Lasagna", "cost": 8, "satisfaction": 7, "category": "Main Course"},
+  {"name": "Burger", "cost": 6, "satisfaction": 5, "category": "Main Course"},
+  {"name": "Vegetable Stir Fry", "cost": 7, "satisfaction": 6, "category": "Main Course"},
+  {"name": "Cheesecake", "cost": 4, "satisfaction": 4, "category": "Dessert"},
+  {"name": "Apple Pie", "cost": 3, "satisfaction": 3, "category": "Dessert"},
+  {"name": "Ice Cream", "cost": 2, "satisfaction": 2, "category": "Dessert"},
+  {"name": "Chocolate Cake", "cost": 5, "satisfaction": 5, "category": "Dessert"},
+  {"name": "Tiramisu", "cost": 6, "satisfaction": 6, "category": "Dessert"}
+],
+"budget": 25
+}

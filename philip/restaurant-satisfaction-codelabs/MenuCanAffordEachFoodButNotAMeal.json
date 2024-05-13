@@ -1,0 +1,12 @@
+{
+"foods": [
+{"name": "Frickles", "cost": 24, "satisfaction": 24, "category": "Appetizer"},
+{"name": "Chicken", "cost": 24, "satisfaction": 24, "category": "Main Course"},
+{"name": "cake", "cost": 24, "satisfaction": 24, "category": "dessert"},
+{"name": "Limado with no ice", "cost": 24, "satisfaction": 8, "category": "drink"},
+{"name": "Kambucha", "cost": 24, "satisfaction": 24, "category": "drink"},
+{"name": "Gilbert and Sullivan", "cost": 24, "satisfaction": 9, "category": "drink"},
+{"name": "water", "cost": 24, "satisfaction": 10, "category": "drink"}
+],
+"budget": 25
+}

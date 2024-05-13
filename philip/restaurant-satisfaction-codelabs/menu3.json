@@ -1,0 +1,9 @@
+{
+"foods": [
+{"name": "Fried Calamari", "cost": 6, "satisfaction": 5, "category": "Appetizer"},
+{"name": "Beef", "cost": 6, "satisfaction": 5, "category": "Main Course"},
+{"name": "Ice cream", "cost": 6, "satisfaction": 5, "category": "dessert"},
+{"name": "Limado with no ice", "cost": 6, "satisfaction": 5, "category": "drink"}
+],
+"budget": 25
+}
