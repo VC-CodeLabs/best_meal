@@ -339,11 +339,20 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 	mainCourseIndexes := make([]int, 0)
 	dessertIndexes := make([]int, 0)
 
+	// detect duplicate names
+	knownFoodNames := make(map[string]int, 0)
+
 	for i, food := range foods {
 
 		if VERBOSE {
 			log.Printf("Input foods[%d]: %+v\n", i, food)
 		}
+
+		if knownFoodNames[food.Name] > 0 {
+			return nil, fmt.Errorf("Duplicate food name=`%s` at foods[%d] and foods[%d]", food.Name, knownFoodNames[food.Name]-1, i)
+		}
+
+		knownFoodNames[food.Name] = i + 1
 
 		switch cleanseCategory(food.Category) {
 		case cleanseCategory(APPETIZER_CATEGORY_NAME):

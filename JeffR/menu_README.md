@@ -5,6 +5,7 @@ use -f={menuJsonFileSpec} parameter to override the default menu.json e.g.
 | ---   | ---   | ---    |
 | menu | a small example derived from Alek's README (subset of full) | Fried Calamari, Beer, Lasagna, Cheesecake, tC=21, tS=18 |
 | menuBadCategory | category=Cheese | error="Unknown food category..." |
+| menuDuplicateFoodNames | "Chef Salad" x2 Appetizer & Main Course | error="Duplicate food name..." |
 | menuEmptyFile | no content, zero length | error="Bad menu json: unexpected end of input" |
 | menuEmptyJson | {} | error="No food in menu??" | 
 | menuEmptyJsonArray | [] | error="Bad menu ... cannot unmarshal" |
