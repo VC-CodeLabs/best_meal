@@ -71,6 +71,7 @@ func findAndEmitBestMeal(inputFile string) {
 		emitBestMealError(err)
 	} else {
 
+		// the best meal will be the one-and-only item in the array returned
 		bestMeal := bestMeals[0]
 
 		emitBestMeal(bestMeal)
@@ -121,10 +122,16 @@ func emitBestMeal(bestMeal BestMeal) {
 ////////////////////////////////////////////////////////////////////
 // define the output
 
+// the final result: the most satisfying meal within our budget aka the best meal
 type BestMeal struct {
-	SelectedFoods     [4]string `json:"selectedFoods"`
-	TotalCost         int       `json:"totalCost"`
-	TotalSatisfaction int       `json:"totalSatisfaction"`
+	// the names of the foods selected, one from each category
+	SelectedFoods [MEAL_ITEMS]string `json:"selectedFoods"`
+
+	// the total cost of this meal in dollars
+	TotalCost int `json:"totalCost"`
+
+	// the total satisfaction score for this meal
+	TotalSatisfaction int `json:"totalSatisfaction"`
 }
 
 /*
@@ -139,7 +146,10 @@ const ( // BEST_MEAL_ERR
 )
 */
 
+// the structure used to report errors- these can be input errors or no meal within our budget
 type BestMealError struct {
+
+	// a description of the specific error encountered
 	Error string `json:"error"`
 }
 
@@ -148,26 +158,34 @@ type BestMealError struct {
 
 // a MenuItem represents an entry in the menu.foods array
 type MenuItem struct {
+
 	// the name of this menu item e.g. "Steak"
-	Name string
+	Name string `json:"name"`
+
 	// the cost of this menu item in dollars
-	Cost int
+	Cost int `json:"cost"`
+
 	// the satisfaction score of this menu item
-	Satisfaction int
+	Satisfaction int `json:"satisfaction"`
+
 	// the category of this menu item e.g. "Main Course"
-	Category string
+	Category string `json:"category"`
 }
 
 // define the structure of the menu input:
 //
 //	an array of foods + our budget
 type Menu struct {
+
 	// the set of foods, including their cost, satisfaction and category
-	Foods []MenuItem
+	Foods []MenuItem `json:"foods"`
+
 	// the budget we have to spend on a four-part meal from this menu in dollars
-	Budget int
+	Budget int `json:"budget"`
 }
 
+// find the best meal based on menu and budget in the spec'd inputFile .json;
+// we return an array for the BestMeal to allow for nil value when we have an error
 func findBestMeal(inputFile string) ([]BestMeal, error) {
 
 	menu, err := loadMenuAndBudget(inputFile)
@@ -191,15 +209,11 @@ func findBestMeal(inputFile string) ([]BestMeal, error) {
 		return nil, err
 	}
 
+	// the most satisfying meal will be the one-and-only item in the array returned
 	mostSatisfyingMeal := meals[0]
 
 	bestMeal := BestMeal{
-		[4]string{
-			menu.Foods[mostSatisfyingMeal.appetizer].Name,
-			menu.Foods[mostSatisfyingMeal.drink].Name,
-			menu.Foods[mostSatisfyingMeal.mainCourse].Name,
-			menu.Foods[mostSatisfyingMeal.dessert].Name,
-		},
+		mealFoodNames(menu.Foods, mostSatisfyingMeal),
 		mostSatisfyingMeal.totalCost, mostSatisfyingMeal.totalSatisfaction}
 
 	return []BestMeal{bestMeal}, nil
@@ -260,16 +274,16 @@ func loadMenuAndBudget(inputFile string) (Menu, error) {
 // the sum of the corresponding fields from the four food items in this meal
 type Meal struct {
 	// menu.foods index for appetizer
-	appetizer int
+	appIndex int
 	// menu.foods index for drink
-	drink int
+	drinkIndex int
 	// menu.foods index for main course
-	mainCourse int
+	mainCourseIndex int
 	// menu.foods index for dessert
-	dessert int
-	// sum of menu.foods[meal.appetizer|drink|mainCourse|dessert].cost
+	dessertIndex int
+	// sum of menu.foods[meal.app|drink|mainCourse|dessert indices].cost
 	totalCost int
-	// sum of menu.foods[meal.appetizer|drink|mainCourse|dessert].satisfaction
+	// sum of menu.foods[meal.app|drink|mainCourse|dessert indices].satisfaction
 	totalSatisfaction int
 }
 
@@ -290,6 +304,8 @@ type Meal struct {
 // I factored cost into the equation-
 // given two meals with the same total satisfaction,
 // the meal with the lower total cost will be favored.
+//
+// we return an array for the meal so we can use nil when an error occurs
 func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 
 	if /* foods == nil || */ len(foods) == 0 {
@@ -301,10 +317,10 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 
 	// assemble the list of food items by category;
 	// the values we're tracking here are indexes in the set of foods
-	apps := make([]int, 0)
-	drinks := make([]int, 0)
-	mains := make([]int, 0)
-	desserts := make([]int, 0)
+	appIndexes := make([]int, 0)
+	drinkIndexes := make([]int, 0)
+	mainCourseIndexes := make([]int, 0)
+	dessertIndexes := make([]int, 0)
 
 	for i, food := range foods {
 
@@ -316,19 +332,19 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 		switch category {
 		case APPETIZER:
 			{
-				apps = append(apps, i)
+				appIndexes = append(appIndexes, i)
 			}
 		case DRINK:
 			{
-				drinks = append(drinks, i)
+				drinkIndexes = append(drinkIndexes, i)
 			}
 		case MAIN_COURSE:
 			{
-				mains = append(mains, i)
+				mainCourseIndexes = append(mainCourseIndexes, i)
 			}
 		case DESSERT:
 			{
-				desserts = append(desserts, i)
+				dessertIndexes = append(dessertIndexes, i)
 			}
 		default:
 			return nil, fmt.Errorf("Unknown foods[%d] category: %+v", i, food)
@@ -336,26 +352,26 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 	}
 
 	// verify we have something in each category- note only the first gap found is reported
-	if len(apps) == 0 {
+	if len(appIndexes) == 0 {
 		return nil, errors.New("No apps in menu")
 	}
 
-	if len(drinks) == 0 {
+	if len(drinkIndexes) == 0 {
 		return nil, errors.New("No drinks in menu")
 	}
 
-	if len(mains) == 0 {
+	if len(mainCourseIndexes) == 0 {
 		return nil, errors.New("No mains in menu")
 	}
 
-	if len(desserts) == 0 {
+	if len(dessertIndexes) == 0 {
 		return nil, errors.New("No desserts in menu")
 	}
 
 	if VERBOSE {
-		log.Printf("Checking %d apps x %d drinks x %d mains x %d desserts = %d meals within $%d budget\n",
-			len(apps), len(drinks), len(mains), len(desserts),
-			len(apps)*len(drinks)*len(mains)*len(desserts),
+		log.Printf("Checking %d apps x %d drinks x %d mains x %d desserts = %d meals for $%d budget\n",
+			len(appIndexes), len(drinkIndexes), len(mainCourseIndexes), len(dessertIndexes),
+			len(appIndexes)*len(drinkIndexes)*len(mainCourseIndexes)*len(dessertIndexes),
 			budget)
 	}
 
@@ -365,13 +381,13 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 	// have we found at least one candidate
 	foundMostSatisfyingMeal := false
 	// track the maximum total satisfaction we've found so far
-	maxSatisfaction := 0
+	maxTotalSatisfaction := 0
 	// track the
-	lowestCost := math.MaxInt
+	lowestSatisfyingTotalCost := math.MaxInt
 	// track the cheapest four-part meal regardless of budget;
 	// if no meal is available within budget,
-	// we'll let them know how far short they are
-	minimumCost := math.MaxInt
+	// we'll let them know how many $s short they are
+	cheapestMealTotalCost := math.MaxInt
 
 	// track the actual most satisfying meal within budget found so far
 	// as we work our way thru the menu food items
@@ -382,21 +398,21 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 
 	// for each combination of foods, one from each category
 
-	for _, app := range apps {
-		for _, drink := range drinks {
-			for _, main := range mains {
-				for _, dessert := range desserts {
+	for _, appIndex := range appIndexes {
+		for _, drinkIndex := range drinkIndexes {
+			for _, mainCourseIndex := range mainCourseIndexes {
+				for _, dessertIndex := range dessertIndexes {
 
 					if VERBOSE {
 						log.Printf("Meal #%d foods[] indexes: app=[%d] drink=[%d] main=[%d] dessert=[%d]\n",
-							mealCounter, app, drink, main, dessert)
+							mealCounter, appIndex, drinkIndex, mainCourseIndex, dessertIndex)
 					}
 
 					totalCost := 0 +
-						foods[app].Cost +
-						foods[drink].Cost +
-						foods[main].Cost +
-						foods[dessert].Cost
+						foods[appIndex].Cost +
+						foods[drinkIndex].Cost +
+						foods[mainCourseIndex].Cost +
+						foods[dessertIndex].Cost
 
 					if totalCost <= budget {
 
@@ -404,45 +420,45 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 						// compute our total satisfaction for this meal
 
 						totalSatisfaction := 0 +
-							foods[app].Satisfaction +
-							foods[drink].Satisfaction +
-							foods[main].Satisfaction +
-							foods[dessert].Satisfaction
+							foods[appIndex].Satisfaction +
+							foods[drinkIndex].Satisfaction +
+							foods[mainCourseIndex].Satisfaction +
+							foods[dessertIndex].Satisfaction
 
 						// highest satisfaction
-						if totalSatisfaction > maxSatisfaction ||
+						if totalSatisfaction > maxTotalSatisfaction ||
 							// equal satisfaction but lower cost (which is also satisfying)
-							(totalSatisfaction >= maxSatisfaction && totalCost < lowestCost) {
+							(totalSatisfaction >= maxTotalSatisfaction && totalCost < lowestSatisfyingTotalCost) {
 
 							// save off the candidate meal and stats
-							mostSatisfyingMeal = Meal{app, drink, main, dessert, totalCost, totalSatisfaction}
-							maxSatisfaction = totalSatisfaction
-							lowestCost = totalCost
+							mostSatisfyingMeal = Meal{appIndex, drinkIndex, mainCourseIndex, dessertIndex, totalCost, totalSatisfaction}
+							maxTotalSatisfaction = totalSatisfaction
+							lowestSatisfyingTotalCost = totalCost
 							foundMostSatisfyingMeal = true
 
 							// since we found at least one candidate, we'll no longer be tracking minimum cost
-							minimumCost = -1
+							cheapestMealTotalCost = -1
 
 							if VERBOSE {
-								log.Printf("** Most Satisfying + Lowest Cost (so far): %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
+								log.Printf("** Most Satisfying + Lowest Cost (so far): %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, appIndex, drinkIndex, mainCourseIndex, dessertIndex), totalCost, totalSatisfaction)
 							}
 						} else {
 							if VERBOSE {
-								log.Printf("Less Satisfying: %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
+								log.Printf("Less Satisfying: %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, appIndex, drinkIndex, mainCourseIndex, dessertIndex), totalCost, totalSatisfaction)
 							}
 						}
 
 					} else {
 						if VERBOSE {
-							log.Printf("Over budget: %s totalCost=%d\n", foodNames(foods, app, drink, main, dessert), totalCost)
+							log.Printf("Over budget: %s totalCost=%d\n", foodNames(foods, appIndex, drinkIndex, mainCourseIndex, dessertIndex), totalCost)
 						}
 					}
 
 					if !foundMostSatisfyingMeal {
-						if totalCost < minimumCost {
-							minimumCost = totalCost
+						if totalCost < cheapestMealTotalCost {
+							cheapestMealTotalCost = totalCost
 							if VERBOSE {
-								log.Printf("Cheapest meal cost: %d\n", minimumCost)
+								log.Printf("Cheapest meal cost: %d\n", cheapestMealTotalCost)
 							}
 						}
 					}
@@ -457,33 +473,41 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 		if VERBOSE {
 			log.Printf("**** Most Satisfying + Lowest Cost Meal: %s totalCost=%d totalSatisfaction=%d\n",
 				foodNames(foods,
-					mostSatisfyingMeal.appetizer,
-					mostSatisfyingMeal.drink,
-					mostSatisfyingMeal.mainCourse,
-					mostSatisfyingMeal.dessert),
+					mostSatisfyingMeal.appIndex,
+					mostSatisfyingMeal.drinkIndex,
+					mostSatisfyingMeal.mainCourseIndex,
+					mostSatisfyingMeal.dessertIndex),
 				mostSatisfyingMeal.totalCost,
 				mostSatisfyingMeal.totalSatisfaction)
 		}
 		return []Meal{mostSatisfyingMeal}, nil
 	} else {
 		if VERBOSE {
-			log.Printf("*** Budget=%d vs Cheapest Meal=%d\n", budget, minimumCost)
+			log.Printf("*** Budget=%d vs Cheapest Meal=%d\n", budget, cheapestMealTotalCost)
 		}
 		return nil,
 			fmt.Errorf(""+
 				"Checked %d meal(s), none fit your budget- "+
 				"you need another %d buck(s) to dine here :/",
-				mealCounter, minimumCost-budget)
+				mealCounter, cheapestMealTotalCost-budget)
 	}
 }
 
+func mealFoodNames(foods []MenuItem, meal Meal) [MEAL_ITEMS]string {
+	return foodNames(foods,
+		meal.appIndex,
+		meal.drinkIndex,
+		meal.mainCourseIndex,
+		meal.dessertIndex)
+}
+
 // convert the indexes for foods in a four-part meal to the food names
-func foodNames(foods []MenuItem, app int, drink int, main int, dessert int) [4]string {
-	return [4]string{
-		foods[app].Name,
-		foods[drink].Name,
-		foods[main].Name,
-		foods[dessert].Name,
+func foodNames(foods []MenuItem, appIndex int, drinkIndex int, mainCourseIndex int, dessertIndex int) [MEAL_ITEMS]string {
+	return [MEAL_ITEMS]string{
+		foods[appIndex].Name,
+		foods[drinkIndex].Name,
+		foods[mainCourseIndex].Name,
+		foods[dessertIndex].Name,
 	}
 }
 
@@ -500,4 +524,5 @@ const ( // MenuItemCategoryIndex
 	DRINK_INDEX
 	MAIN_INDEX
 	DESSERT_INDEX
+	MEAL_ITEMS
 )
