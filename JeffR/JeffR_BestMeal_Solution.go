@@ -164,7 +164,7 @@ type MenuItem struct {
 type Menu struct {
 	// the set of foods, including their cost, satisfaction and category
 	Foods []MenuItem
-	// the budget we have to spend on a four-course meal from this menu in dollars
+	// the budget we have to spend on a four-part meal from this menu in dollars
 	Budget int
 }
 
@@ -309,7 +309,7 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 	for i, food := range foods {
 
 		if VERBOSE {
-			log.Printf("Input Food %+v\n", food)
+			log.Printf("Input foods[%d]: %+v\n", i, food)
 		}
 
 		category := strings.ToLower(strings.ReplaceAll(food.Category, " ", ""))
@@ -331,7 +331,7 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 				desserts = append(desserts, i)
 			}
 		default:
-			return nil, errors.New("Unknown food category: " + food.Category)
+			return nil, fmt.Errorf("Unknown foods[%d] category: %+v", i, food)
 		}
 	}
 
@@ -350,6 +350,13 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 
 	if len(desserts) == 0 {
 		return nil, errors.New("No desserts in menu")
+	}
+
+	if VERBOSE {
+		log.Printf("Checking %d apps x %d drinks x %d mains x %d desserts = %d meals within $%d budget\n",
+			len(apps), len(drinks), len(mains), len(desserts),
+			len(apps)*len(drinks)*len(mains)*len(desserts),
+			budget)
 	}
 
 	// now that we have validated input broken down by category,
@@ -381,7 +388,8 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 				for _, dessert := range desserts {
 
 					if VERBOSE {
-						log.Printf("Meal #%d Food indexes: %d %d %d %d\n", mealCounter, app, drink, main, dessert)
+						log.Printf("Meal #%d foods[] indexes: app=[%d] drink=[%d] main=[%d] dessert=[%d]\n",
+							mealCounter, app, drink, main, dessert)
 					}
 
 					totalCost := 0 +
@@ -416,17 +424,17 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 							minimumCost = -1
 
 							if VERBOSE {
-								log.Printf("** Most Satisfying + Lowest Cost (so far): %s cost=%d satisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
+								log.Printf("** Most Satisfying + Lowest Cost (so far): %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
 							}
 						} else {
 							if VERBOSE {
-								log.Printf("Less Satisfying: %s cost=%d satisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
+								log.Printf("Less Satisfying: %s totalCost=%d totalSatisfaction=%d\n", foodNames(foods, app, drink, main, dessert), totalCost, totalSatisfaction)
 							}
 						}
 
 					} else {
 						if VERBOSE {
-							log.Printf("Over budget: %s cost=%d\n", foodNames(foods, app, drink, main, dessert), totalCost)
+							log.Printf("Over budget: %s totalCost=%d\n", foodNames(foods, app, drink, main, dessert), totalCost)
 						}
 					}
 
@@ -434,7 +442,7 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 						if totalCost < minimumCost {
 							minimumCost = totalCost
 							if VERBOSE {
-								log.Printf("Minimal cost: %d\n", minimumCost)
+								log.Printf("Cheapest meal cost: %d\n", minimumCost)
 							}
 						}
 					}
