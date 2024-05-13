@@ -1,0 +1,9 @@
+{
+    "budget": 25,
+    "foods": [
+        { "category": "Dessert", "satisfaction": 6, "cost": 6, "name": "Tiramisu" },
+        { "category": "Main Course", "satisfaction": 10, "cost": 12, "name": "Steak" },
+        { "category": "Drink", "satisfaction": 2, "cost": 2, "name": "Coffee" },
+        { "category": "Appetizer", "satisfaction": 4, "cost": 4, "name": "Bruschetta" }
+    ]
+}
