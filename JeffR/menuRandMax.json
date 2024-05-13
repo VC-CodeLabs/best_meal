@@ -1,0 +1,1205 @@
+{
+	"foods": [
+		{
+			"name": "Main Course23",
+			"cost": 50,
+			"satisfaction": 42,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer17",
+			"cost": 37,
+			"satisfaction": 13,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer25",
+			"cost": 48,
+			"satisfaction": 1,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course10",
+			"cost": 38,
+			"satisfaction": 32,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course50",
+			"cost": 46,
+			"satisfaction": 28,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course20",
+			"cost": 18,
+			"satisfaction": 27,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer6",
+			"cost": 22,
+			"satisfaction": 22,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink35",
+			"cost": 20,
+			"satisfaction": 44,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer10",
+			"cost": 50,
+			"satisfaction": 27,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer5",
+			"cost": 4,
+			"satisfaction": 7,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert19",
+			"cost": 4,
+			"satisfaction": 46,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink20",
+			"cost": 25,
+			"satisfaction": 43,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink26",
+			"cost": 9,
+			"satisfaction": 7,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink13",
+			"cost": 27,
+			"satisfaction": 36,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer30",
+			"cost": 20,
+			"satisfaction": 39,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer33",
+			"cost": 35,
+			"satisfaction": 23,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert26",
+			"cost": 37,
+			"satisfaction": 33,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer19",
+			"cost": 40,
+			"satisfaction": 36,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink41",
+			"cost": 31,
+			"satisfaction": 8,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert32",
+			"cost": 44,
+			"satisfaction": 31,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink15",
+			"cost": 36,
+			"satisfaction": 26,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert34",
+			"cost": 33,
+			"satisfaction": 3,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert1",
+			"cost": 41,
+			"satisfaction": 8,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer36",
+			"cost": 13,
+			"satisfaction": 48,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert39",
+			"cost": 42,
+			"satisfaction": 23,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink4",
+			"cost": 18,
+			"satisfaction": 2,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer50",
+			"cost": 30,
+			"satisfaction": 3,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer23",
+			"cost": 26,
+			"satisfaction": 8,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert29",
+			"cost": 9,
+			"satisfaction": 45,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer42",
+			"cost": 2,
+			"satisfaction": 25,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert40",
+			"cost": 50,
+			"satisfaction": 18,
+			"category": "Dessert"
+		},
+		{
+			"name": "Bruschetta",
+			"cost": 10,
+			"satisfaction": 50,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer37",
+			"cost": 15,
+			"satisfaction": 44,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course40",
+			"cost": 49,
+			"satisfaction": 16,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert2",
+			"cost": 6,
+			"satisfaction": 37,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink14",
+			"cost": 3,
+			"satisfaction": 47,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink46",
+			"cost": 45,
+			"satisfaction": 12,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer1",
+			"cost": 32,
+			"satisfaction": 38,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert17",
+			"cost": 11,
+			"satisfaction": 29,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert43",
+			"cost": 22,
+			"satisfaction": 22,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert38",
+			"cost": 23,
+			"satisfaction": 26,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert20",
+			"cost": 28,
+			"satisfaction": 19,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert12",
+			"cost": 39,
+			"satisfaction": 25,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer26",
+			"cost": 43,
+			"satisfaction": 41,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course33",
+			"cost": 19,
+			"satisfaction": 4,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert7",
+			"cost": 17,
+			"satisfaction": 41,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink3",
+			"cost": 50,
+			"satisfaction": 17,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer27",
+			"cost": 1,
+			"satisfaction": 40,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert50",
+			"cost": 20,
+			"satisfaction": 49,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink45",
+			"cost": 21,
+			"satisfaction": 37,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer46",
+			"cost": 46,
+			"satisfaction": 19,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course8",
+			"cost": 44,
+			"satisfaction": 17,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer11",
+			"cost": 7,
+			"satisfaction": 26,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink18",
+			"cost": 15,
+			"satisfaction": 24,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course28",
+			"cost": 26,
+			"satisfaction": 12,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink2",
+			"cost": 32,
+			"satisfaction": 16,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer32",
+			"cost": 12,
+			"satisfaction": 14,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert35",
+			"cost": 29,
+			"satisfaction": 7,
+			"category": "Dessert"
+		},
+		{
+			"name": "Steak",
+			"cost": 7,
+			"satisfaction": 50,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course38",
+			"cost": 9,
+			"satisfaction": 21,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course4",
+			"cost": 24,
+			"satisfaction": 25,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course14",
+			"cost": 45,
+			"satisfaction": 2,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course5",
+			"cost": 39,
+			"satisfaction": 22,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course15",
+			"cost": 32,
+			"satisfaction": 41,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer44",
+			"cost": 9,
+			"satisfaction": 2,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer47",
+			"cost": 29,
+			"satisfaction": 4,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink23",
+			"cost": 35,
+			"satisfaction": 13,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink11",
+			"cost": 19,
+			"satisfaction": 5,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert47",
+			"cost": 47,
+			"satisfaction": 5,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink19",
+			"cost": 5,
+			"satisfaction": 3,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer15",
+			"cost": 25,
+			"satisfaction": 32,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert48",
+			"cost": 32,
+			"satisfaction": 27,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert33",
+			"cost": 14,
+			"satisfaction": 11,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course37",
+			"cost": 10,
+			"satisfaction": 33,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink10",
+			"cost": 12,
+			"satisfaction": 22,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course21",
+			"cost": 20,
+			"satisfaction": 36,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course36",
+			"cost": 2,
+			"satisfaction": 11,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink7",
+			"cost": 39,
+			"satisfaction": 41,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink8",
+			"cost": 26,
+			"satisfaction": 40,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert21",
+			"cost": 19,
+			"satisfaction": 16,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink22",
+			"cost": 40,
+			"satisfaction": 18,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert4",
+			"cost": 13,
+			"satisfaction": 38,
+			"category": "Dessert"
+		},
+		{
+			"name": "Coffee",
+			"cost": 41,
+			"satisfaction": 50,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink38",
+			"cost": 24,
+			"satisfaction": 15,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink34",
+			"cost": 43,
+			"satisfaction": 25,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink24",
+			"cost": 42,
+			"satisfaction": 6,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert31",
+			"cost": 49,
+			"satisfaction": 4,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course44",
+			"cost": 37,
+			"satisfaction": 5,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert24",
+			"cost": 30,
+			"satisfaction": 36,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink12",
+			"cost": 29,
+			"satisfaction": 49,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert6",
+			"cost": 12,
+			"satisfaction": 9,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink44",
+			"cost": 46,
+			"satisfaction": 20,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert37",
+			"cost": 8,
+			"satisfaction": 30,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course34",
+			"cost": 42,
+			"satisfaction": 34,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert16",
+			"cost": 7,
+			"satisfaction": 15,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink17",
+			"cost": 8,
+			"satisfaction": 14,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer24",
+			"cost": 39,
+			"satisfaction": 15,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer22",
+			"cost": 34,
+			"satisfaction": 20,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Tiramisu",
+			"cost": 18,
+			"satisfaction": 50,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course29",
+			"cost": 34,
+			"satisfaction": 48,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course49",
+			"cost": 16,
+			"satisfaction": 37,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer34",
+			"cost": 41,
+			"satisfaction": 46,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer41",
+			"cost": 18,
+			"satisfaction": 29,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink42",
+			"cost": 48,
+			"satisfaction": 33,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course12",
+			"cost": 21,
+			"satisfaction": 47,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink9",
+			"cost": 22,
+			"satisfaction": 48,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert42",
+			"cost": 43,
+			"satisfaction": 48,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course47",
+			"cost": 5,
+			"satisfaction": 8,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink29",
+			"cost": 44,
+			"satisfaction": 30,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert9",
+			"cost": 27,
+			"satisfaction": 28,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer31",
+			"cost": 38,
+			"satisfaction": 10,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert3",
+			"cost": 5,
+			"satisfaction": 6,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink6",
+			"cost": 14,
+			"satisfaction": 19,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink43",
+			"cost": 11,
+			"satisfaction": 38,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course30",
+			"cost": 13,
+			"satisfaction": 40,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer4",
+			"cost": 28,
+			"satisfaction": 49,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course31",
+			"cost": 30,
+			"satisfaction": 31,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink16",
+			"cost": 13,
+			"satisfaction": 35,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course22",
+			"cost": 41,
+			"satisfaction": 6,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer16",
+			"cost": 49,
+			"satisfaction": 17,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert22",
+			"cost": 40,
+			"satisfaction": 34,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert5",
+			"cost": 10,
+			"satisfaction": 13,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course26",
+			"cost": 22,
+			"satisfaction": 49,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert44",
+			"cost": 25,
+			"satisfaction": 39,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course17",
+			"cost": 15,
+			"satisfaction": 7,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course6",
+			"cost": 1,
+			"satisfaction": 1,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course13",
+			"cost": 48,
+			"satisfaction": 9,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink40",
+			"cost": 49,
+			"satisfaction": 21,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course9",
+			"cost": 17,
+			"satisfaction": 13,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink39",
+			"cost": 34,
+			"satisfaction": 34,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course46",
+			"cost": 12,
+			"satisfaction": 26,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert18",
+			"cost": 34,
+			"satisfaction": 43,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer9",
+			"cost": 42,
+			"satisfaction": 6,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink1",
+			"cost": 2,
+			"satisfaction": 29,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink27",
+			"cost": 23,
+			"satisfaction": 4,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer38",
+			"cost": 5,
+			"satisfaction": 9,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer39",
+			"cost": 47,
+			"satisfaction": 5,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert36",
+			"cost": 46,
+			"satisfaction": 44,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course2",
+			"cost": 23,
+			"satisfaction": 46,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert45",
+			"cost": 3,
+			"satisfaction": 42,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink25",
+			"cost": 16,
+			"satisfaction": 10,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course25",
+			"cost": 31,
+			"satisfaction": 14,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer14",
+			"cost": 14,
+			"satisfaction": 24,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer21",
+			"cost": 36,
+			"satisfaction": 33,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer7",
+			"cost": 16,
+			"satisfaction": 35,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer35",
+			"cost": 24,
+			"satisfaction": 12,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course24",
+			"cost": 25,
+			"satisfaction": 15,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert25",
+			"cost": 38,
+			"satisfaction": 12,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer49",
+			"cost": 44,
+			"satisfaction": 34,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer48",
+			"cost": 23,
+			"satisfaction": 28,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink50",
+			"cost": 30,
+			"satisfaction": 11,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course7",
+			"cost": 43,
+			"satisfaction": 43,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course35",
+			"cost": 47,
+			"satisfaction": 18,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink31",
+			"cost": 10,
+			"satisfaction": 39,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course39",
+			"cost": 28,
+			"satisfaction": 3,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer29",
+			"cost": 11,
+			"satisfaction": 42,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert41",
+			"cost": 31,
+			"satisfaction": 14,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert15",
+			"cost": 48,
+			"satisfaction": 24,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert14",
+			"cost": 24,
+			"satisfaction": 35,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer45",
+			"cost": 45,
+			"satisfaction": 45,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer18",
+			"cost": 33,
+			"satisfaction": 30,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert28",
+			"cost": 15,
+			"satisfaction": 2,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course3",
+			"cost": 36,
+			"satisfaction": 30,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink28",
+			"cost": 38,
+			"satisfaction": 23,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course43",
+			"cost": 29,
+			"satisfaction": 45,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert49",
+			"cost": 21,
+			"satisfaction": 32,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert13",
+			"cost": 16,
+			"satisfaction": 40,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer8",
+			"cost": 21,
+			"satisfaction": 43,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer20",
+			"cost": 8,
+			"satisfaction": 16,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course18",
+			"cost": 27,
+			"satisfaction": 35,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink32",
+			"cost": 33,
+			"satisfaction": 31,
+			"category": "Drink"
+		},
+		{
+			"name": "Drink48",
+			"cost": 4,
+			"satisfaction": 9,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course42",
+			"cost": 11,
+			"satisfaction": 24,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert23",
+			"cost": 35,
+			"satisfaction": 21,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink21",
+			"cost": 47,
+			"satisfaction": 28,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer12",
+			"cost": 3,
+			"satisfaction": 18,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink47",
+			"cost": 37,
+			"satisfaction": 1,
+			"category": "Drink"
+		},
+		{
+			"name": "Dessert46",
+			"cost": 45,
+			"satisfaction": 10,
+			"category": "Dessert"
+		},
+		{
+			"name": "Drink49",
+			"cost": 1,
+			"satisfaction": 32,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course1",
+			"cost": 3,
+			"satisfaction": 39,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink30",
+			"cost": 28,
+			"satisfaction": 42,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer2",
+			"cost": 17,
+			"satisfaction": 11,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Appetizer13",
+			"cost": 27,
+			"satisfaction": 21,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Dessert8",
+			"cost": 1,
+			"satisfaction": 47,
+			"category": "Dessert"
+		},
+		{
+			"name": "Appetizer43",
+			"cost": 6,
+			"satisfaction": 47,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Main Course11",
+			"cost": 8,
+			"satisfaction": 20,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course27",
+			"cost": 35,
+			"satisfaction": 44,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course16",
+			"cost": 6,
+			"satisfaction": 19,
+			"category": "Main Course"
+		},
+		{
+			"name": "Main Course45",
+			"cost": 40,
+			"satisfaction": 23,
+			"category": "Main Course"
+		},
+		{
+			"name": "Dessert10",
+			"cost": 2,
+			"satisfaction": 17,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert27",
+			"cost": 36,
+			"satisfaction": 20,
+			"category": "Dessert"
+		},
+		{
+			"name": "Dessert30",
+			"cost": 26,
+			"satisfaction": 1,
+			"category": "Dessert"
+		},
+		{
+			"name": "Main Course41",
+			"cost": 33,
+			"satisfaction": 10,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink5",
+			"cost": 17,
+			"satisfaction": 27,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course48",
+			"cost": 4,
+			"satisfaction": 29,
+			"category": "Main Course"
+		},
+		{
+			"name": "Drink36",
+			"cost": 6,
+			"satisfaction": 45,
+			"category": "Drink"
+		},
+		{
+			"name": "Appetizer28",
+			"cost": 19,
+			"satisfaction": 37,
+			"category": "Appetizer"
+		},
+		{
+			"name": "Drink37",
+			"cost": 7,
+			"satisfaction": 46,
+			"category": "Drink"
+		},
+		{
+			"name": "Main Course19",
+			"cost": 14,
+			"satisfaction": 38,
+			"category": "Main Course"
+		},
+		{
+			"name": "Appetizer40",
+			"cost": 31,
+			"satisfaction": 31,
+			"category": "Appetizer"
+		}
+	],
+	"budget": 200
+}

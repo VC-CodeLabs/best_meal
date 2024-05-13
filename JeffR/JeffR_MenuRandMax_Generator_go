@@ -1,0 +1,199 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"math/rand"
+)
+
+func main() {
+	generateRandMaxTestCase()
+}
+
+////////////////////////////////////////////////////////////////////
+// define the input
+
+type MenuItem struct {
+	Name         string `json:"name"`
+	Cost         int    `json:"cost"`
+	Satisfaction int    `json:"satisfaction"`
+	Category     string `json:"category"`
+}
+
+type Menu struct {
+	Foods  []MenuItem `json:"foods"`
+	Budget int        `json:"budget"`
+}
+
+func generateRandMaxTestCase() {
+
+	// generates a randomized test case with a guaranteed result
+	const MAX_FOODS_BY_CATEGORY = 50
+
+	// assemble lists of all possible values 1...MAX for cost and satisfaction
+	cost := make([]int, MAX_FOODS_BY_CATEGORY)
+	satd := make([]int, MAX_FOODS_BY_CATEGORY)
+	for r := 0; r < MAX_FOODS_BY_CATEGORY; r++ {
+		cost[r] = r + 1
+		satd[r] = r + 1
+	}
+
+	// assemble lists of all possible costs and satisfaction 1...MAX by category
+	appsCost := append(make([]int, 0), cost...)
+	appsSatd := append(make([]int, 0), satd...)
+
+	drnkCost := append(make([]int, 0), cost...)
+	drnkSatd := append(make([]int, 0), satd...)
+
+	mainCost := append(make([]int, 0), cost...)
+	mainSatd := append(make([]int, 0), satd...)
+
+	dessCost := append(make([]int, 0), cost...)
+	dessSatd := append(make([]int, 0), satd...)
+
+	// yes, strings.Title is deprecated, but works fine for us
+	appsTitle := "Appetizer"   // strings.Title(APPETIZER)
+	drnkTitle := "Drink"       // strings.Title(DRINK)
+	mainTitle := "Main Course" // strings.Title(MAIN_COURSE)
+	dessTitle := "Dessert"     // strings.Title(DESSERT)
+
+	foods := make([]MenuItem, 0)
+
+	for i := 0; i < MAX_FOODS_BY_CATEGORY; i++ {
+
+		itemsLeft := MAX_FOODS_BY_CATEGORY - i
+		tailNdx := itemsLeft - 1
+
+		//
+		// for each category, generate a unique random cost and satisfaction 1...MAX;
+		// food items have obviously fake names unless they're max satisfaction,
+		// in which case their name matches the BestMeal answer for Alek's sample
+		//
+
+		{
+			appsItem := MenuItem{fmt.Sprintf(appsTitle+"%d", i+1), 0, 0, appsTitle}
+
+			{
+				randNdx := rand.Intn(itemsLeft) // 0...itemsLeft-1
+				randCost := appsCost[randNdx]
+				// swap in item from shrinking tail index
+				appsCost[randNdx], appsCost[tailNdx] = appsCost[tailNdx], appsCost[randNdx]
+				appsItem.Cost = randCost
+			}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randSatd := appsSatd[randNdx]
+				// swap in item from shrinking tail index
+				appsSatd[randNdx], appsSatd[tailNdx] = appsSatd[tailNdx], appsSatd[randNdx]
+				appsItem.Satisfaction = randSatd
+
+				if randSatd == MAX_FOODS_BY_CATEGORY {
+					appsItem.Name = "Bruschetta"
+				}
+			}
+
+			foods = append(foods, appsItem)
+
+		}
+
+		{
+			drnkItem := MenuItem{fmt.Sprintf(drnkTitle+"%d", i+1), 0, 0, drnkTitle}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randCost := drnkCost[randNdx]
+				drnkCost[randNdx], drnkCost[tailNdx] = drnkCost[tailNdx], drnkCost[randNdx]
+				drnkItem.Cost = randCost
+			}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randSatd := drnkSatd[randNdx]
+				drnkSatd[randNdx], drnkSatd[tailNdx] = drnkSatd[tailNdx], drnkSatd[randNdx]
+				drnkItem.Satisfaction = randSatd
+
+				if randSatd == MAX_FOODS_BY_CATEGORY {
+					drnkItem.Name = "Coffee"
+				}
+			}
+
+			foods = append(foods, drnkItem)
+		}
+
+		{
+			mainItem := MenuItem{fmt.Sprintf(mainTitle+"%d", i+1), 0, 0, mainTitle}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randCost := mainCost[randNdx]
+				mainCost[randNdx], mainCost[tailNdx] = mainCost[tailNdx], mainCost[randNdx]
+				mainItem.Cost = randCost
+			}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randSatd := mainSatd[randNdx]
+				mainSatd[randNdx], mainSatd[tailNdx] = mainSatd[tailNdx], mainSatd[randNdx]
+				mainItem.Satisfaction = randSatd
+
+				if randSatd == MAX_FOODS_BY_CATEGORY {
+					mainItem.Name = "Steak"
+				}
+			}
+
+			foods = append(foods, mainItem)
+		}
+
+		{
+			dessItem := MenuItem{fmt.Sprintf(dessTitle+"%d", i+1), 0, 0, dessTitle}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randCost := dessCost[randNdx]
+				dessCost[randNdx], dessCost[tailNdx] = dessCost[tailNdx], dessCost[randNdx]
+				dessItem.Cost = randCost
+			}
+
+			{
+				randNdx := rand.Intn(itemsLeft)
+				randSatd := dessSatd[randNdx]
+				dessSatd[randNdx], dessSatd[tailNdx] = dessSatd[tailNdx], dessSatd[randNdx]
+				dessItem.Satisfaction = randSatd
+
+				if randSatd == MAX_FOODS_BY_CATEGORY {
+					dessItem.Name = "Tiramisu"
+				}
+			}
+
+			foods = append(foods, dessItem)
+		}
+
+	}
+
+	// randomize the order of all menu items
+	totalMenuItems := len(foods)
+
+	for i := 0; i < totalMenuItems; i++ {
+
+		itemsLeft := totalMenuItems - i
+		tailNdx := itemsLeft - 1
+
+		randNdx := rand.Intn(itemsLeft)
+
+		if itemsLeft == tailNdx {
+			continue
+		}
+
+		// swap the item at the random index with the item at the shrinking tail index
+
+		foods[randNdx], foods[tailNdx] = foods[tailNdx], foods[randNdx]
+
+	}
+
+	menu := Menu{foods, MAX_FOODS_BY_CATEGORY * 4}
+
+	json, _ := json.MarshalIndent(&menu, "", "\t")
+	fmt.Println(string(json))
+
+}

@@ -1,0 +1,10 @@
+{
+    "foods": [
+      {"name": "Spring Rolls", "cost": 10, "satisfaction": 8, "category": "Appetizer"},
+      {"name": "Cola", "cost": 5, "satisfaction": 3, "category": "Drink"},
+      {"name": "Ribeye Steak", "cost": 25, "satisfaction": 20, "category": "Main Course"},
+      {"name": "Chocolate Mousse", "cost": 15, "satisfaction": 12, "category": "Dessert"}
+    ],
+    "budget": 20
+  }
+  

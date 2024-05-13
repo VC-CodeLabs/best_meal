@@ -1,0 +1,9 @@
+{
+    "foods": [
+        {"name": "Bruschetta", "cost": 4, "satisfaction": 4, "category": "Appetizer"},
+        {"name": "Coffee", "cost": 2, "satisfaction": 2, "category": "Drink"},
+        {"name": "Steak", "cost": 12, "satisfaction": 10, "category": "Main Course"},
+        {"name": "Tiramisu", "cost": 6, "satisfaction": 6, "category": "Dessert"}
+    ],
+    "budget": 23
+  }

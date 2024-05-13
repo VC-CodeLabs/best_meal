@@ -1,0 +1,7 @@
+{
+    "foods": [
+        {"name": "Chef Salad", "cost": 4, "satisfaction": 4, "category": "Appetizer"},
+        {"name": "Chef Salad", "cost": 8, "satisfaction": 8, "category": "Main Course"}
+    ],
+    "budget": 25
+}
