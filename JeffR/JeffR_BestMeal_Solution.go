@@ -22,6 +22,12 @@ import (
 //	define a variable here at the top for easy testing support-
 //	NOTE this can also be overridden with -f={menuJsonFileSpec}
 var inputFile string = "menu.json"
+
+// flag indicating whether to cleanse categories;
+//
+//	when enabled, the categories will be stripped of whitespace, converted to lowercase,
+//	and stripped of pluralizing "s" suffix, if any,
+//	allowing for minor-yet-insignificant variations in category names
 var CLEANSE_CATEGORIES = true
 
 func main() {
