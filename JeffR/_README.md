@@ -45,13 +45,13 @@ I had originally intended to march thru the inputs to assemble all possible meal
 
 checking for equal-satisfaction-but-lower-cost meals is included in the algorithm- IMO, spending less money is more satisfying
 
-categories are stripped of whitespace and converted to lower case, so 
+categories are stripped of whitespace and converted to lower case and stripped of pluralization, so 
 
-- `"Main Course"`
+- `"Main Courses"`
 - `"mAiNcOuRsE"`
 - `"   M A I N   C O U R S E   "`  
 
-are all valid
+are all valid; use -c=false or change the CLEANSE_CATEGORIES var near the top of the solution .go file to disable this
 
 There is no distinction between valid json that is otherwise empty (literally, `{}`) vs a foods array that is empty- both produce the same "No food..." error output
 

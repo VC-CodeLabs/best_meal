@@ -22,6 +22,7 @@ import (
 //	define a variable here at the top for easy testing support-
 //	NOTE this can also be overridden with -f={menuJsonFileSpec}
 var inputFile string = "menu.json"
+var CLEANSE_CATEGORIES = true
 
 func main() {
 
@@ -33,23 +34,33 @@ func main() {
 	//
 
 	// allow the menu.json input filespec to be customized without changing code
-	filePtr := flag.String("f", inputFile, "the input menu json filespec")
+	fileParamPtr := flag.String("f", inputFile, "the input menu json filespec")
+	// cleanse parameter supports cleansing of category (ignore whitespace/case/pluralized)
+	cleanseParamPtr := flag.Bool("c", CLEANSE_CATEGORIES, "whether to cleanse input categories")
 	// verbose mode supports troubleshooting
-	verbosePtr := flag.Bool("v", VERBOSE, "enable verbose output for troubleshooting")
+	verboseParamPtr := flag.Bool("v", VERBOSE, "enable verbose output for troubleshooting")
 	// the above *declares our support for command line params,
 	// we must actually [flag.Parse]() to process all parameters
 	flag.Parse()
-	if verbosePtr != nil {
+	if verboseParamPtr != nil {
 		// we had the -v parameter
-		VERBOSE = *verbosePtr
+		VERBOSE = *verboseParamPtr
 		if VERBOSE {
 			// -v or -v=true
 			log.Printf("VERBOSE mode enabled.\n")
 		}
 	}
-	if filePtr != nil {
+	if cleanseParamPtr != nil {
+		CLEANSE_CATEGORIES = *cleanseParamPtr
+	}
+
+	if VERBOSE {
+		log.Printf("Cleansing categories: %v\n", CLEANSE_CATEGORIES)
+	}
+
+	if fileParamPtr != nil {
 		// we had the -f={menuJsonFileSpec} parameter
-		inputFile = *filePtr
+		inputFile = *fileParamPtr
 		if VERBOSE {
 			log.Printf("Reading menu json from `%s`\n", inputFile)
 		}
@@ -328,21 +339,20 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 			log.Printf("Input foods[%d]: %+v\n", i, food)
 		}
 
-		category := strings.ToLower(strings.ReplaceAll(food.Category, " ", ""))
-		switch category {
-		case APPETIZER:
+		switch cleanseCategory(food.Category) {
+		case cleanseCategory(APPETIZER_CATEGORY_NAME):
 			{
 				appIndexes = append(appIndexes, i)
 			}
-		case DRINK:
+		case cleanseCategory(DRINK_CATEGORY_NAME):
 			{
 				drinkIndexes = append(drinkIndexes, i)
 			}
-		case MAIN_COURSE:
+		case cleanseCategory(MAIN_COURSE_CATEGORY_NAME):
 			{
 				mainCourseIndexes = append(mainCourseIndexes, i)
 			}
-		case DESSERT:
+		case cleanseCategory(DESSERT_CATEGORY_NAME):
 			{
 				dessertIndexes = append(dessertIndexes, i)
 			}
@@ -493,6 +503,16 @@ func findMostSatisfyingMeal(foods []MenuItem, budget int) ([]Meal, error) {
 	}
 }
 
+func cleanseCategory(category string) string {
+	if CLEANSE_CATEGORIES {
+		// ignore whitespace, ignore case, ignore plural vs singular
+		cleansed := strings.TrimSuffix(strings.ToLower(strings.ReplaceAll(category, " ", "")), "s")
+		return cleansed
+	} else {
+		return category // uncleansed
+	}
+}
+
 func mealFoodNames(foods []MenuItem, meal Meal) [MEAL_ITEMS]string {
 	return foodNames(foods,
 		meal.appIndex,
@@ -513,10 +533,10 @@ func foodNames(foods []MenuItem, appIndex int, drinkIndex int, mainCourseIndex i
 
 // the food type names used to categorize the foods in the menu
 const ( // MenuItemCategory
-	APPETIZER   string = "appetizer"
-	DRINK       string = "drink"
-	MAIN_COURSE string = "maincourse"
-	DESSERT     string = "dessert"
+	APPETIZER_CATEGORY_NAME   string = "Appetizer"
+	DRINK_CATEGORY_NAME       string = "Drink"
+	MAIN_COURSE_CATEGORY_NAME string = "Main Course"
+	DESSERT_CATEGORY_NAME     string = "Dessert"
 )
 
 const ( // MenuItemCategoryIndex
