@@ -1,0 +1,159 @@
+-- Test 1
+{
+  "foods":[
+    {"name":"Fried Calamari","cost":6,"satisfaction":5,"category":"Appetizer"},
+    {"name":"Spinach Dip","cost":5,"satisfaction":3,"category":"Appetizer"},
+    {"name":"Bruschetta","cost":4,"satisfaction":4,"category":"Appetizer"},
+    {"name":"Chicken Wings","cost":7,"satisfaction":6,"category":"Appetizer"},
+    {"name":"Garlic Bread","cost":3,"satisfaction":2,"category":"Appetizer"},
+    {"name":"Soda","cost":1,"satisfaction":1,"category":"Drink"},
+    {"name":"Coffee","cost":2,"satisfaction":2,"category":"Drink"},
+    {"name":"Beer","cost":3,"satisfaction":2,"category":"Drink"},
+    {"name":"Wine","cost":5,"satisfaction":4,"category":"Drink"},
+    {"name":"Cocktail","cost":6,"satisfaction":5,"category":"Drink"},
+    {"name":"Steak","cost":12,"satisfaction":10,"category":"Main Course"},
+    {"name":"Salmon","cost":11,"satisfaction":9,"category":"Main Course"},
+    {"name":"Lasagna","cost":8,"satisfaction":7,"category":"Main Course"},
+    {"name":"Burger","cost":6,"satisfaction":5,"category":"Main Course"},
+    {"name":"Vegetable Stir Fry","cost":7,"satisfaction":6,"category":"Main Course"},
+    {"name":"Cheesecake","cost":4,"satisfaction":4,"category":"Dessert"},
+    {"name":"Apple Pie","cost":3,"satisfaction":3,"category":"Dessert"},
+    {"name":"Ice Cream","cost":2,"satisfaction":2,"category":"Dessert"},
+    {"name":"Chocolate Cake","cost":5,"satisfaction":5,"category":"Dessert"},
+    {"name":"Tiramisu","cost":6,"satisfaction":6,"category":"Dessert"}
+  ],
+"budget":25
+}
+
+
+{
+  "selectedFoods": ["Fried Calamari", "Coctail", "Lasagna", "Chocolate Cake"],
+  "totalCost": 25,
+  "totalSatisfaction": 22
+}
+
+
+-- Test 2
+{
+  "foods": [
+    {"name": "Spinach Dip", "cost": 5, "satisfaction": 3, "category": "Appetizer"},
+    {"name": "Bruschetta", "cost": 4, "satisfaction": 4, "category": "Appetizer"},
+    {"name": "Chicken Wings", "cost": 7, "satisfaction": 6, "category": "Appetizer"},
+    {"name": "Garlic Bread", "cost": 3, "satisfaction": 2, "category": "Appetizer"},
+    {"name": "Soda", "cost": 1, "satisfaction": 1, "category": "Drink"},
+    {"name": "Coffee", "cost": 2, "satisfaction": 2, "category": "Drink"},
+    {"name": "Beer", "cost": 3, "satisfaction": 2, "category": "Drink"},
+    {"name": "Wine", "cost": 5, "satisfaction": 4, "category": "Drink"},
+    {"name": "Cocktail", "cost": 6, "satisfaction": 5, "category": "Drink"},
+    {"name": "Steak", "cost": 12, "satisfaction": 10, "category": "Main Course"},
+    {"name": "Cheesecake", "cost": 4, "satisfaction": 4, "category": "Dessert"},
+    {"name": "Salmon", "cost": 11, "satisfaction": 9, "category": "Main Course"},
+    {"name": "Lasagna", "cost": 8, "satisfaction": 7, "category": "Main Course"},
+    {"name": "Burger", "cost": 6, "satisfaction": 5, "category": "Main Course"},
+    {"name": "Vegetable Stir Fry", "cost": 7, "satisfaction": 6, "category": "Main Course"},
+    {"name": "Ice Cream", "cost": 2, "satisfaction": 2, "category": "Dessert"},
+    {"name": "Chocolate Cake", "cost": 5, "satisfaction": 5, "category": "Dessert"}
+  ],
+  "budget": 0
+}
+
+{
+  "error": "Cannot afford any items with the current budget."
+}
+
+
+-- Test 3
+{
+  "foods": [
+    {"name": "Spinach Dip", "cost": 5, "satisfaction": 3, "category": "Appetizer"},
+	{"name": "Bruschetta", "cost": 4, "satisfaction": 4, "category": "Appetizer"},
+    {"name": "Chicken Wings", "cost": 7, "satisfaction": 6, "category": "Appetizer"},
+    {"name": "Garlic Bread", "cost": 3, "satisfaction": 2, "category": "Appetizer"},
+    {"name": "Salmon", "cost": 11, "satisfaction": 9, "category": "Main Course"},
+    {"name": "Lasagna", "cost": 8, "satisfaction": 7, "category": "Main Course"},
+    {"name": "Burger", "cost": 6, "satisfaction": 5, "category": "Main Course"},
+    {"name": "Soda", "cost": 1, "satisfaction": 1, "category": "Drink"},
+	{"name": "Coffee", "cost": 2, "satisfaction": 2, "category": "Drink"},
+    {"name": "Beer", "cost": 3, "satisfaction": 2, "category": "Drink"},
+    {"name": "Wine", "cost": 5, "satisfaction": 4, "category": "Drink"},
+    {"name": "Cocktail", "cost": 6, "satisfaction": 5, "category": "Drink"},
+    {"name": "Steak", "cost": 12, "satisfaction": 10, "category": "Main Course"}
+  ],
+  "budget": 20
+}
+
+{
+  "error": "Incomplete menu: missing category 'Dessert'."
+}
+
+-- Test 4
+{
+  "foods": [
+    {"name": "Fried Cheese", "cost": 50, "satisfaction": 20, "category": "Appetizer"},
+    {"name": "A Drink Todd Makes", "cost": 45, "satisfaction": 18, "category": "Drink"},
+    {"name": "Peanut Butter and Jelly Sandwich", "cost": 60, "satisfaction": 25, "category": "Main Course"},
+    {"name": "Water", "cost": 40, "satisfaction": 15, "category": "Dessert"}
+  ],
+  "budget": 25
+}
+
+{
+  "error": "All items exceed the budget. Cannot select any dishes."
+}
+
+
+-- Test 5
+{
+  "foods": [
+    {"name": "Wings", "cost": 5, "satisfaction": 5, "category": "Appetizer"},
+    {"name": "Beer", "cost": 5, "satisfaction": 5, "category": "Drink"},
+    {"name": "Salad", "cost": 5, "satisfaction": 5, "category": "Main Course"},
+    {"name": "Ice Cream", "cost": 5, "satisfaction": 5, "category": "Dessert"}
+  ],
+  "budget": 20
+}
+
+{
+  "selectedFoods": ["Wings", "Beer", "Salad", "Ice Cream"],
+  "totalCost": 20,
+  "totalSatisfaction": 20
+}
+
+
+-- Test 6
+{
+  "foods": [
+    {"name": "Soda", "cost": 1, "satisfaction": 1, "category": "Drink"},
+    {"name": "Coffee", "cost": 2, "satisfaction": 2, "category": "Drink"},
+    {"name": "Beer", "cost": 3, "satisfaction": 3, "category": "Drink"},
+    {"name": "Wine", "cost": 4, "satisfaction": 4, "category": "Drink"},
+    {"name": "Cocktail", "cost": 5, "satisfaction": 5, "category": "Drink"}
+  ],
+  "budget": 15
+}
+
+{
+  "error": "Incomplete menu: missing categories 'Appetizer', 'Main Course', and 'Dessert'."
+}
+
+
+-- Test 7
+{
+  "foods": [
+    {"name": "Lima Beans", "cost": 50, "satisfaction": 0, "category": "Appetizer"},
+    {"name": "Water", "cost": 1, "satisfaction": 0, "category": "Drink"},
+    {"name": "Haggis", "cost": 500, "satisfaction": 0, "category": "Main Course"},
+    {"name": "Crickets", "cost": 18, "satisfaction": 0, "category": "Dessert"},
+	{"name": "Moldy Bread", "cost": 0, "satisfaction": 0, "category": "Appetizer"},
+    {"name": "Urine", "cost": 0, "satisfaction": 0, "category": "Drink"},
+    {"name": "Cow Manure", "cost": 0, "satisfaction": 0, "category": "Main Course"},
+    {"name": "100 Year Old Egg", "cost": 0, "satisfaction": 0, "category": "Dessert"}
+  ],
+  "budget": 1000
+}
+
+{
+  "selectedFoods": ["Moldy Bread", "Urine", "Cow Manure", "100 Year Old Egg"],
+  "totalCost": 0,
+  "totalSatisfaction": 0
+}
